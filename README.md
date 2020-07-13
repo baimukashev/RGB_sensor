@@ -1,5 +1,6 @@
 # RGB_sensor
 # Shear, Torsion and Pressure Tactile Sensor via Plastic Optofiber Guided Imaging 
+
 *By D. Baimukashev, Z. Kappassov and H. A. Varol. IEEE Robotics and Automation Letters, vol. 5, no. 2, pp. 2618-2625, April 2020, doi: 10.1109/LRA.2020.2972876.
 
 
@@ -13,20 +14,20 @@
   number={2},
   pages={2618-2625},}
 
-# The software package contains:
+## The software package contains:
 
-## 1) In directory data/
+### 1) In directory data/
 
 The data collected for RGB sensor. 
 
-## 2) In directory data_collection/
+### 2) In directory data_collection/
 
 The scripts for collectin and parcing the data. 
 
-## 3) In directory model_train/
+### 3) In directory model_train/
 
 The scripts for training the DL model.
 
-## 4) In directory plotting_results/
+### 4) In directory plotting_results/
 
 The scripts for plotting the visuals in the paper. 

@@ -20,12 +20,23 @@ The data collected for RGB sensor.
 
 ### 2) In directory data_collection/
 
-The scripts for collectin and parcing the data. 
+The scripts for collectin and parcing the data. ROS packages
 
-### 3) In directory model_train/
+### 3) In directory code/
 
 The scripts for training the DL model.
 
-### 4) In directory plotting_results/
+### 4) In directory models/
+
+The trained model and output of testing samples.
+
+### 5) In directory plotting_results/
 
 The scripts for plotting the visuals in the paper. 
+
+
+### 6) In directory CAD/
+
+CAD models of the RGB sensor.
+
+

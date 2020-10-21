@@ -2,6 +2,11 @@
 
 *By D. Baimukashev, Z. Kappassov and H. A. Varol. IEEE Robotics and Automation Letters, vol. 5, no. 2, pp. 2618-2625, April 2020, doi: 10.1109/LRA.2020.2972876.*
 
+[Link to paper:](https://ieeexplore.ieee.org/abstract/document/8990014)
+
+
+
+
 ## Bibtex
 @ARTICLE{8990014,
   author={D. {Baimukashev} and Z. {Kappassov} and H. A. {Varol}},

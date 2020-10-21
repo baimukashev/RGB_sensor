@@ -1,8 +1,6 @@
 # Shear, Torsion and Pressure Tactile Sensor via Plastic Optofiber Guided Imaging 
 
-*By D. Baimukashev, Z. Kappassov and H. A. Varol. IEEE Robotics and Automation Letters, vol. 5, no. 2, pp. 2618-2625, April 2020, doi: 10.1109/LRA.2020.2972876.*
-
-[Link to paper:](https://ieeexplore.ieee.org/abstract/document/8990014)
+*By D. Baimukashev, Z. Kappassov and H. A. Varol. IEEE Robotics and Automation Letters, vol. 5, no. 2, pp. 2618-2625, April 2020, doi: 10.1109/LRA.2020.2972876.* [Link](https://ieeexplore.ieee.org/abstract/document/8990014)
 
 
 

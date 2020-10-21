@@ -1,4 +1,4 @@
-This is guidelines to run the training and testing scripts for DL model. 
+This are guidelines to run the training and testing scripts for DL model. 
 
 Prerequisites:
 
@@ -21,3 +21,9 @@ How to create conda environment and install the packages:
   
   - conda install -c conda-forge matplotlib
   
+
+How to run the scripts:
+
+1. Copy the images dataset to path **data/images/**
+2. Set the training parameters in **train.py**
+2. To train the model run the command **python train.py**

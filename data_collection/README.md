@@ -48,8 +48,9 @@
 3) Start the MOVEIT: **roslaunch ur10_moveit_config ur10_moveit_planning_execution.launch** 
 
 4) Move the robot default configurations:
-	Position 1: Robot far from the sensor surface (200 mm): **rosrun calibrate_rgb_sensor move_robot_back.py**
-	Position 2: Robot close to the sensor surface (1-2 mm): **rosrun calibrate_rgb_sensor test_move_init_joints_before_calib_rgb_sensor.py**
+	- Position 1: Robot far from the sensor surface (200 mm): **rosrun calibrate_rgb_sensor move_robot_back.py**
+	 
+	- Position 2: Robot close to the sensor surface (1-2 mm): **rosrun calibrate_rgb_sensor test_move_init_joints_before_calib_rgb_sensor.py**
 
 5)Start the Weiss sensor: 
 	- Provide the power supply: Voltage **24V**, Current **0.1 A** 

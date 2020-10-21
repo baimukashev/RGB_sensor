@@ -52,11 +52,12 @@
 	 
 	- Position 2: Robot close to the sensor surface (1-2 mm): **rosrun calibrate_rgb_sensor test_move_init_joints_before_calib_rgb_sensor.py**
 
-5)Start the Weiss sensor: 
+5) Start the Weiss sensor: 
 	- Provide the power supply: Voltage **24V**, Current **0.1 A** 
+	
 	- Run the command to start the sensor data publishing: **roslaunch weiss_kms40 kms40.launch** 
 
-6)Start the camera recording: **roslaunch libuvc_camera webcam_start.launch**
+6) Start the camera recording: **roslaunch libuvc_camera webcam_start.launch**
 
 
 7) Run the UR robot velocity subscriber: (Robot waits joint velocity commands to move)

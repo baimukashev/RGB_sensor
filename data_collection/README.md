@@ -48,20 +48,20 @@
 3) Start the MOVEIT: **roslaunch ur10_moveit_config ur10_moveit_planning_execution.launch** 
 
 4) Move the robot default configurations:
-	Position 1: Robot far from the sensor surface (200 mm): ** rosrun calibrate_rgb_sensor move_robot_back.py **
-	Position 2: Robot close to the sensor surface (1-2 mm):** rosrun calibrate_rgb_sensor test_move_init_joints_before_calib_rgb_sensor.py **
+	Position 1: Robot far from the sensor surface (200 mm): **rosrun calibrate_rgb_sensor move_robot_back.py**
+	Position 2: Robot close to the sensor surface (1-2 mm): **rosrun calibrate_rgb_sensor test_move_init_joints_before_calib_rgb_sensor.py**
 
 5)Start the Weiss sensor: 
-	- Provide the power supply: Voltage 24V, Current 0.1 A 
-	- Run the command to start the sensor data publishing: roslaunch weiss_kms40 kms40.launch 
+	- Provide the power supply: Voltage **24V**, Current **0.1 A** 
+	- Run the command to start the sensor data publishing: **roslaunch weiss_kms40 kms40.launch** 
 
-6)Start the camera recording: roslaunch libuvc_camera webcam_start.launch
+6)Start the camera recording: **roslaunch libuvc_camera webcam_start.launch**
 
 
 7) Run the UR robot velocity subscriber: (Robot waits joint velocity commands to move)
-	- rosrun move_ur_sim desired_velocities_node
+	- **rosrun move_ur_sim desired_velocities_node**
 
-! At this point all sensors are ready to collect the data. Next, we will be giving the robot manipulator to move in a predefined trajectory, and all data will be recorded. Image data is saved to a folder **experiment_name/image/**, while other sensor values are saved in a separate .csv file. 
+! At this point all sensors are ready to collect the data. Next, we will be giving the robot manipulator to move in a predefined trajectory, and all data will be recorded. Image data is saved to a folder **experiment_name/image/**, while other sensor values are saved in a separate **.csv** file. 
 
 
 ### Running the setup: 

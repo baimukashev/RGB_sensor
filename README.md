@@ -13,7 +13,7 @@
   pages={2618-2625},}
 
 
-[![IMAGE ALT TEXT HERE](https://www.youtube.com/embed/IH5f0U1_9is)](https://www.youtube.com/watch?v=IH5f0U1_9is)
+[![IMAGE ALT TEXT HERE](http://i3.ytimg.com/vi/IH5f0U1_9is/hqdefault.jpg)](https://www.youtube.com/watch?v=IH5f0U1_9is)
 
 
 ## The software package contains:

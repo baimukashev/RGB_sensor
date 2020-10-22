@@ -1,4 +1,4 @@
-Labels in the dataset is stored as follows:
+Labels in the dataset are stored as follows:
 
 image_name, contact_type, x,y,Fn, Fx, Fy, Fz, Tz
 

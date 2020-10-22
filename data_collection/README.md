@@ -24,7 +24,7 @@
 
 ## ROS Packages :
 
-### All data was recorded using the ROS platform. For that, the following packages/ros drivers were installed:
+### All data were recorded using the ROS platform. For that, the following packages/ros drivers were installed:
 
 
 1) For Weiss sensor: https://github.com/ipa320/weiss_kms40
@@ -34,7 +34,7 @@
 3) UR robot control: https://github.com/ros-industrial/ur_modern_driver
 
 
-### ROS packages were build using the CATKIN BUILD. 
+### ROS packages were built using the CATKIN BUILD. 
 
 
 ## Conducting the experiments:
@@ -78,11 +78,11 @@
 
 ## Camera autofocus
 
-As the camera does not have property to turn off the autofocus, while changing the setup it may be the case that camera changes focus distance and therefore image will be blured. This error is fixed with v4l2-ctl tool (http://manpages.ubuntu.com/manpages/bionic/man1/v4l2-ctl.1.html).
+As the camera does not have property to turn off the autofocus, while changing the setup it may be the case that camera changes focus distance and therefore, image will be blured. This error is fixed with v4l2-ctl tool (http://manpages.ubuntu.com/manpages/bionic/man1/v4l2-ctl.1.html).
 
 1) Turn on auto-focus for a while: **v4l2-ctl -d /dev/video0 --set-ctrls=focus_auto=1**
 
-2) Find the needed focus of the camera. 
+2) Find the focus distance of the camera. 
 
 3) Turn off auto-focus: **v4l2-ctl -d /dev/video0 --set-ctrls=focus_auto=0**
 

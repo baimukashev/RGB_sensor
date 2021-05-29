@@ -9,8 +9,6 @@
 #include "std_msgs/Float64MultiArray.h"
 
 //void Callback_state(const std_msgs::Float64::ConstPtr & msg);
-
-
 /* This function subscribes to camera, weiss and x,y,z,angle values and 
  * publishes all data in /all_data_calib_normal_shear_torsion
  */ 

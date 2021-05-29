@@ -208,16 +208,7 @@ void PoseShow::br_des_pose()
   des_transform = init_transform;
   des_transform.setOrigin(tf::Vector3(X_des_test_.pose.position.x, X_des_test_.pose.position.y,
 			 X_des_test_.pose.position.z));//0.5 is the motion scalar
-//   tf::Quaternion orien;
-//   geometry_msgs::Quaternion quat;
-//   quat = X_des_test_.pose.orientation;
-//   orien.setW(quat.w);
-//   orien.setZ(quat.z);
-//   orien.setY(quat.y);
-//   orien.setX(quat.x);
-//   des_transform.setRotation(orien);
   br_goal_frame_.sendTransform(tf::StampedTransform(des_transform, ros::Time::now(), "world", "goal"));
-//   ROS_INFO("in broadcast des  1stime%lf,%lf,%lf",Z_INIT,X_INIT,Y_TEMP);
 	
 }
 
@@ -249,20 +240,6 @@ public:
   bool is_init_exper_;  
   bool is_at_home_;   
   
-  //get pose from /palm/pose
-//   geometry_msgs::PoseStamped get_pose();  
-  //send pose to /move_arm_6D
-//   void send_pose(geometry_msgs::PoseStamped msg_sendpose);
-//   void callback_current_pose(const geometry_msgs::PoseStampedPtr& msg);
-//   bool is_pose_rec_;  
-
-    /** 
-   * Subscribes to the palm pose published by 
-   * tools/kinematics_tools/scripts/palm_pose_publisher.py
-   */
-//   geometry_msgs::PoseStamped palm_pose_now_;
-//   geometry_msgs::PoseStamped palm_pose_send_;
-//   ros::Subscriber sub_current_pose;
   ros::Publisher pub_velocities;
   void send_velocity(geometry_msgs::Twist in_vel);
   
@@ -298,17 +275,11 @@ public:
 URutil::URutil()
 {
   is_new_msg_ = false;
-  
   pub_velocities = n.advertise<geometry_msgs::Twist>("/desired_Vx_Vy_Vz", 1000);
- 
   pub_point = n.advertise<geometry_msgs::PointStamped>("/topic_point", 100);
-
   pub_mode = n.advertise<std_msgs::Float64>("/topic_mode", 100);
-
   pub_state = n.advertise<std_msgs::Float64>("/topic_state", 100);
-
   pub_angleZ = n.advertise<std_msgs::Float64>("/topic_angleZ", 100);
-
   
   fb_feats_sub = n.subscribe("/fb_feats", 1,  &URutil::cb_fb_feats_sub,this);
   sub_opto = n.subscribe("/weiss_wrench", 100,  &URutil::Callback_optoforce, this);
@@ -322,16 +293,13 @@ URutil::URutil()
   trj_.points.push_back(trjp_);
   trj_.points.push_back(trjp_);
   
-//   	ROS_INFO("initializing joint names");
-	trj_.joint_names.push_back("shoulder_pan_joint");
-	trj_.joint_names.push_back("shoulder_lift_joint");
-	trj_.joint_names.push_back("elbow_joint");
-	trj_.joint_names.push_back("wrist_1_joint");
-	trj_.joint_names.push_back("wrist_2_joint");
-	trj_.joint_names.push_back("wrist_3_joint");
- 
-//   contact_points_sub = n.subscribe("/contact_points_weiss_plot", 1,  &markersShow::cb_contact_points_sub,this);
-// contact_points_hist= n.advertise<visualization_msgs::MarkerArray>("mark_contacts_hist", 1 );
+  trj_.joint_names.push_back("shoulder_pan_joint");
+  trj_.joint_names.push_back("shoulder_lift_joint");
+  trj_.joint_names.push_back("elbow_joint");
+  trj_.joint_names.push_back("wrist_1_joint");
+  trj_.joint_names.push_back("wrist_2_joint");
+  trj_.joint_names.push_back("wrist_3_joint");
+
 
 }
 URutil::~URutil(){}
@@ -341,23 +309,9 @@ void URutil::cb_fb_feats_sub(const tactile_servo_msgs::ContsFeatsConstPtr& msg_)
         pixels_in_contact_ur_ = msg_->control_features[0].num_pixels_contact;
         highest_force_cell_ur_ = msg_->control_features[0].highest_force_cell;
         real_total_force_ur_ = msg_->control_features[0].real_total_force;
-
 	is_new_msg_ = true;
-        /* coordinates of COP/COC in world =
-        / sequence number of the  COP/COC pixel in x or y
-        / *
-        / physical size of a sensor in x or y
-        / /
-        / number of cells in x(y)*/
-//        copx_fb = copx_fb*size_x / cells_x;
-//        copy_fb = copy_fb*size_y / cells_y;
-//        cocx_fb = cocx_fb*size_x / cells_x;
-//        cocy_fb = cocy_fb*size_y / cells_y;
     }
 }
-
-// --------------------------------------------------------
-
 
 void URutil::send_velocity(geometry_msgs::Twist in_vel)
 {
@@ -413,23 +367,13 @@ void URutil::send_state(float state)
     global_msg_image_state_force.wrench.torque.y = msg.wrench.torque.y;
     global_msg_image_state_force.wrench.torque.z  = msg.wrench.torque.z;
 
-    //Book.o_temp = msg;
     geometry_msgs::WrenchStamped temp = msg;
-    //uint32_t temp2 = msg.header.seq;
-    //geometry_msgs::WrenchStamped temp3 = msg.header.stamp;
-    //ROS_INFO("I heard: %lf", temp.wrench.force.z);
-  // 	ROS_INFO_STREAM(data_mine::o_temp);
 
   }
  int main(int argc, char** argv)
 
  {
-  // ros::NodeHandle n;
-  //
-
   ROS_INFO("pub_poses_exper");
-
-  
   ros::Time::init();
   int OVERAL;
   OVERAL = 0;
@@ -577,19 +521,11 @@ void URutil::send_state(float state)
   WZ_INIT = WZ_NOW;
   WZ_TEMP = WZ_NOW;
   
-  
-  
   //*******************************************************
   // SELECT THE EXPERIMENT
   // operation modes : Normal - 1; Shear - 2; Torsion - 3;     
   CURRENT_mode = 1;
   //*******************************************************
-
-  
-  
-  // ::: RUN THE EXPERIMENTS :::
-    
-  // 
   // MODE - 1: Normal Pressing
 
    if (CURRENT_mode == 1){
@@ -625,36 +561,11 @@ void URutil::send_state(float state)
       double rand_angle = rand()%rand_range_angle;
       double rand_length = (rand()%rand_range_length)/1000.0 + 1.0/1000;
       double rand_depth = (rand()%rand_range_depth)/1000.0 + 1.0/1000;
-      
-      // convert to X,Y,Z
-      
-      
-      
-      //ROS_ERROR("rand_angle  %f", rand_angle);
-      //ROS_ERROR("rand_length %f", rand_length);
-      //ROS_ERROR("rand_depth  %f ",rand_depth);
-      
-      //ROS_ERROR("check cos rad or degrees %f", cos(rand_angle*3.14/180));
-      //ROS_ERROR("check sin rad or degrees %f", sin(rand_angle*3.14/180));
-
       double rand_x = rand_length * cos(rand_angle*3.14/180.0);
       double rand_y = rand_length * sin(rand_angle*3.14/180.0);
-      
       double increment_z = 5/10000.0;     // depth interval = 0.5 mm
       
-      
-      // limit values for extra cases
-      /*
-      if ( rand_x > 10/1000.0 ){
-	rand_x = 10/1000.0;
-      }
-      if ( rand_y > 10/1000.0  ){
-	rand_y = 10/1000.0;
-      }
-      if ( rand_z > 10/1000.0  ){
-	rand_z = 10/1000.0;
-      }*/
-      
+     
       ROS_ERROR("rand_x in mm %f", rand_x*1000);
       ROS_ERROR("rand_y in mm %f", rand_y*1000);
       //ROS_ERROR("rand_z in mm %f ",rand_z*1000);
@@ -773,15 +684,9 @@ void URutil::send_state(float state)
 	Experiment.send_state(CURRENT_state);
       
       }
-      //
-      
-      
       /*
       // move to rand_z
       Z_TEMP = Z_INIT - rand_z;
-      //ROS_ERROR("Z_NOW %f", Z_NOW);
-      //ROS_ERROR("Z_TEMP %f", Z_TEMP);
-      //ROS_ERROR("Z_INIT %f ", Z_INIT);
       
       ROS_INFO("Move to rand_z down");
       while( (ros::ok())&&(Z_NOW>(Z_TEMP)) )
@@ -799,7 +704,6 @@ void URutil::send_state(float state)
       CURRENT_point.point.y = rand_y;
       CURRENT_point.point.z = rand_z;
       
-      //***********************************************
       // stop for some time and send the values, publish angle, mode, point pointCoor
       start_time = ros::Time::now();
       ROS_INFO("STOP and SEND the values");
@@ -818,16 +722,8 @@ void URutil::send_state(float state)
       
       
       */
-      
-      
-
-  
-      // >>>>>>>>>>>>
-      
       // end pressing for current point, and move back to inital point
-      
       // move back to rand_z + depth_offset
-      
       
       double depth_offset = 0/1000.0; 
       

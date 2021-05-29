@@ -1,4 +1,5 @@
-*These are guidelines to run the training and testing scripts for DL model. *
+#These are guidelines to run the training and testing scripts for DL model. 
+
 
 ***Create conda environment and install the packages:***
 1. Download and install Anaconda for Python 3 from https://www.anaconda.com/products/individual 

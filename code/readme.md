@@ -1,4 +1,4 @@
-#These are guidelines to run the training and testing scripts for DL model. 
+## These are guidelines to run the training and testing scripts for DL model. 
 
 
 ***Create conda environment and install the packages:***
